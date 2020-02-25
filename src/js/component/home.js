@@ -7,20 +7,15 @@ export function Home() {
 	const [check, setCheck] = useState(false);
 	const [update, setUpdate] = useState("");
 	function getToDo() {
-		fetch("https://assets.breatheco.de/apis/fake/todos/user/ipince")
+		fetch("https://assets.breatheco.de/apis/fake/todos/user/ipince", {
+			method: "GET",
+			headers: { "Content-Type": "application/json" }
+		})
 			.then(resp => resp.json())
 			.then(data => {
 				setList(data);
 				console.log("getToDo", data);
 			});
-	}
-
-	function getValues() {
-		let obj = {
-			label: "make breakfast", //document.getElementById("chkDo").value,
-			done: false //document.getElementById("txtTask").value
-		};
-		return obj;
 	}
 
 	function saveToDo(listToSave) {
@@ -92,7 +87,7 @@ export function Home() {
 							&nbsp;&nbsp;
 						</label>
 						<label>
-							Do:
+							Done:
 							<input
 								id="chkDo"
 								type="checkbox"
