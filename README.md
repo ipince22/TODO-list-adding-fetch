@@ -1,4 +1,5 @@
 # TODO-list-adding-fetch
+<p>
 Create a TODO list application that allows users to add and delete tasks.
 
 You app needs to look like this.(https://projects.breatheco.de/json/?slug=todo-list&preview)
@@ -8,10 +9,11 @@ The use can add as many tasks as it wants.
 When there is no tasks the list should "No tasks, add a task"
 There is no way to update a task, the user will ahve to delete and create again.
 
+</p>
+# Using useState,useEffect,fetch for our API 
 
 
-Using useState,useEffect,fetch for our API 
-
+```
 fetch("https://assets.breatheco.de/apis/fake/todos/user/ipince", {
 			method: "GET",
 			headers: { "Content-Type": "application/json" }
@@ -21,6 +23,7 @@ fetch("https://assets.breatheco.de/apis/fake/todos/user/ipince", {
 				setList(data);
 				console.log("getToDo", data);
 			});
+```
 
 <p>
   <a href="https://gitpod.io#https://github.com/4GeeksAcademy/react-hello.git"><img src="https://raw.githubusercontent.com/4GeeksAcademy/react-hello/master/open-in-gitpod.svg?sanitize=true" />
